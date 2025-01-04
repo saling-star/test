@@ -1,0 +1,17 @@
+Bolt install
+
+./composer create-project bolt/project sfbc 5.0
+
+cd sfbc
+../composer require bolt/themes -W
+bin/console bolt:copy-theme bolt/themes
+
+../composer require bolt/forms
+
+config/bolt << sfbw
+
+public/files << sfbw
+
+cp sfbb/.env sfbc/
+cp -r sfbw/public/files/* sfbc/public/files/
+cp -r sfbw/public/thumbs sfbc/public/
